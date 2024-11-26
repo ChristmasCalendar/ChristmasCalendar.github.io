@@ -41,8 +41,8 @@ if (window.location.pathname.includes("content.html")) {
         24: "Day 24: Merry Christmas, my love! You are my world. 🌎❤️",
     };
 
-    const today = new Date().getDate();
-    //const today = 5;
+    //const today = new Date().getDate();
+    const today = 5;
 
     document.querySelectorAll(".box").forEach((box) => {
         const day = parseInt(box.dataset.day, 10);
