@@ -45,7 +45,7 @@ if (window.location.pathname.includes("content.html")) {
     const today = 5;
 
     document.querySelectorAll(".box").forEach((box) => {
-        const day = parseInt(box.dataset.day);
+        const day = parseInt(box.dataset.day, 10);
 
         if (day > today) {
             box.classList.add("locked");
