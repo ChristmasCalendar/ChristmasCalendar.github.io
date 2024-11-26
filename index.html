@@ -3,55 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protected Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-        .login-container {
-            text-align: center;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #fff;
-        }
-        input {
-            padding: 10px;
-            margin: 10px 0;
-            width: 80%;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #error {
-            color: red;
-            display: none;
-        }
-    </style>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="login-container">
         <h2>Enter Password</h2>
         <input type="password" id="password" placeholder="Password" />
         <button onclick="checkPassword()">Login</button>
-        <p id="error">Incorrect password. Try again!</p>
+        <p id="error" style="color: red; display: none;">Incorrect password. Try again!</p>
     </div>
-
-    <!-- Link to the external script -->
     <script src="script.js"></script>
 </body>
 </html>
