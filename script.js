@@ -1,6 +1,6 @@
 // Script for login (index.html)
 function checkPassword() {
-    const correctPassword = "mypassword123"; // Change this to your desired password
+    const correctPassword = "mylove"; // Change this to your desired password
     const userInput = document.getElementById("password").value;
     const errorMessage = document.getElementById("error");
 
