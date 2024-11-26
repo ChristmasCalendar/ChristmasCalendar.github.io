@@ -41,24 +41,37 @@ if (window.location.pathname.includes("content.html")) {
         24: "Day 24: Merry Christmas, my love! You are my world. 🌎❤️",
     };
 
-    //const today = new Date().getDate();
-    const today = 5;
+    // Get the current date (month and day)
+const today = new Date();
 
-    document.querySelectorAll(".box").forEach((box) => {
-        const day = parseInt(box.dataset.day, 10);
+// Get the current day of the month
+const currentDay = today.getDate();
 
-        if (day > today) {
-            box.classList.add("locked");
+// Get the current month (0-indexed, so November is 10)
+const currentMonth = today.getMonth();
+
+// Set the year for comparison if needed (but in this case, we're focusing on month and day)
+const currentYear = today.getFullYear();
+
+// Lock and unlock the calendar boxes based on the current day
+document.querySelectorAll(".box").forEach((box) => {
+    const day = parseInt(box.dataset.day, 10); // Get the day from the box data attribute
+
+    // Lock boxes if the current month is not December or if the box is a future day
+    if (currentMonth < 11 || (currentMonth === 11 && day > currentDay)) {
+        box.classList.add("locked");
+    }
+
+    // Add event listener for unlocked boxes
+    box.addEventListener("click", () => {
+        if (!box.classList.contains("locked")) {
+            const messageText = messages[day]; // Fetch the message for the clicked day
+            document.getElementById("messageText").textContent = messageText;
+            document.getElementById("message").style.display = "block";
         }
-
-        box.addEventListener("click", () => {
-            if (!box.classList.contains("locked")) {
-                const messageText = messages[day];
-                document.getElementById("messageText").textContent = messageText;
-                document.getElementById("message").style.display = "block";
-            }
-        });
     });
+});
+
 
     document.getElementById("closeMessage").addEventListener("click", () => {
         document.getElementById("message").style.display = "none";
