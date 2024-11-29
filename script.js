@@ -1,6 +1,6 @@
 // Script for login (index.html)
 function checkPassword() {
-    const correctPassword = "mylove"; // Change this to your desired password
+    const correctPassword = "minälskling"; // Change this to your desired password
     const userInput = document.getElementById("password").value;
     const errorMessage = document.getElementById("error");
 
@@ -58,9 +58,9 @@ document.querySelectorAll(".box").forEach((box) => {
     const day = parseInt(box.dataset.day, 10); // Get the day from the box data attribute
 
     // Lock boxes if the current month is not December or if the box is a future day
-    if (currentMonth < 11 || (currentMonth === 11 && day > currentDay)) {
-        box.classList.add("locked");
-    }
+    //if (currentMonth < 11 || (currentMonth === 11 && day > currentDay)) {
+    //    box.classList.add("locked");
+    //}
 
     // Add event listener for unlocked boxes
     box.addEventListener("click", () => {
